@@ -14,7 +14,7 @@ public interface FormateurRepository extends JpaRepository<Formateur, Long>{
 
 	
 //	@Query("toDo....")
-	public Long nombreFormateursImpliquesDansUnCours(@Param("typeCours")TypeCours typeCours);
+	//public Long nombreFormateursImpliquesDansUnCours(@Param("typeCours")TypeCours typeCours);
 	
 
 }
