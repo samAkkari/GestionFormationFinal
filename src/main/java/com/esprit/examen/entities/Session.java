@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,7 +28,7 @@ public class Session implements Serializable{
 	private String description;
 	@ManyToOne
     Formateur formateur;
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL)
 	Set<Cours> cours;
 	
 	public Long getId() {

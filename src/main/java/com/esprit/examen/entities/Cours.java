@@ -3,6 +3,7 @@ package com.esprit.examen.entities;
 import java.io.Serializable;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -10,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 public class Cours implements Serializable {
@@ -21,7 +24,8 @@ public class Cours implements Serializable {
 	@Enumerated(EnumType.STRING)
 	private TypeCours typeCours;
 	private String intitule;
-	@ManyToMany(mappedBy="cours")
+ 	@JsonBackReference
+	@ManyToMany(mappedBy="cours",cascade = CascadeType.ALL)
 	private Set<Session> sessions;
 	public Long getId() {
 		return id;
@@ -48,11 +52,11 @@ public class Cours implements Serializable {
 		this.intitule = intitule;
 	}
 	
-	
+
 	public Set<Session> getSessions() {
 		return sessions;
 	}
-	public void setSessions(Set<Session> sessions) {
+ 	public void setSessions(Set<Session> sessions) {
 		this.sessions = sessions;
 	}
 	@Override
