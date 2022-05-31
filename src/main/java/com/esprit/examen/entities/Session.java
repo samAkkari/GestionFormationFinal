@@ -84,11 +84,19 @@ public class Session implements Serializable{
 		this.dateFin = dateFin;
 		this.duree = duree;
 		this.description = description;
+		
+		
+	}
+	
+	public Session(Long duree, String description) {
+		this.duree = duree;
+		this.description = description;
 	}
 	public Session() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 	
 }

@@ -34,7 +34,11 @@ public class FormateurService implements IFormateurService{
 
 	@Override
 	public Long nombreFormateursImpliquesDansUnCours(TypeCours typeCours) {
+		
 		return null;
+		
+		
+		
 				//formateurRepository.nombreFormateursImpliquesDansUnCours(typeCours);
 		
 	}
