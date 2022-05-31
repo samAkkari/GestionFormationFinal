@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.esprit.examen</groupId>
 	<artifactId>GesF</artifactId>
-	<version>1.0</version>
+	<version>1.1.0-SNAPSHOT</version>
 		<name>GesF</name>
 	<description>springBootProject</description>
 	<properties>
@@ -88,5 +88,14 @@
 
 		</plugins>
 	</build>
-
+<distributionManagement>
+<snapshotRepository>
+<id>nexus</id>
+<url>http://localhost:8081/repository/maven-snapshots/</url>
+</snapshotRepository>
+<repository>
+<id>nexus</id>
+<url>http://localhost:8081/repository/maven-releases/</url>
+</repository>
+</distributionManagement>
 </project>
